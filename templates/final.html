@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Job Search Form</title>
+    <link rel= "shortcut icon" href="{{url_for('static',filename='favicon.ico')}}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-image: url({{url_for('static',filename='builtin/image.jpg')}});
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-color: #f0f0f0; /* Set a light gray background color for the body */
+        }
+        #robot-image {
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+            transition: transform 0.3s ease-in-out;
+        }
+        #robot-image:hover {
+            transform: rotate(20deg);
+        }
+        .form-container {
+            width: 300px;
+            margin: 0 auto; /* Center the form container horizontally */
+            margin-top: 50px; /* Add some top margin to create space from the top */
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            background-color: #ffffff; /* White background color */
+        }
+        
+        .form-container h1 {
+            color: #008080; /* Set the heading color to teal */
+        }
+        .form-container label {
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+        }
+        .form-container input[type="text"],
+        .form-container input[type="email"],
+        .form-container input[type="tel"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .submit-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .submit-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Job Search Form</h1> <!-- Heading inside the white box -->
+
+        <form action="/submit_form" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Mobile Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <button type="submit" class="submit-button">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        // JavaScript code can be added here for additional interactivity if needed
+    </script>
+</body>
+</html>
